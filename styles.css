@@ -1,0 +1,217 @@
+:root {
+    --darker-color: #0b090a;
+    --dark-gray: #161a1d;
+    --red-wine: #660708;
+    --darker-red: #a4161a;
+    --middle-red: #ba181b;
+    --lighter-red: #e5383b;
+    --middle-gray: #B1A7A6;
+    --silver:#D3D3D3;
+    --lighter-gray: #F5F3F4;
+    /* FUENTES */
+    --allura: "Allura", cursive;
+    --londrina: "Londrina Shadow", sans-serif;
+    --quicksand: "Quicksand", sans-serif;
+    --monserrat: "Montserrat", sans-serif;
+
+
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* HEADER NAVBAR NAME  */
+header {
+    background-color: var(--dark-gray);
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.name {
+    color: #Fff;
+    margin: auto 0 auto 5rem;
+    font: italic bolder 3rem "Schibsted Grotesk", sans-serif;;
+}
+
+#welcome-section {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(var(--dark-gray) 95%, #fff)
+}
+#navbar {
+    margin: auto 9rem auto 0;
+}
+.section {
+    position: relative;
+    margin: auto 18px;
+    text-decoration: none;
+    color: #fff;
+    font: normal 500 1.15rem var(--quicksand);
+   
+}
+.section.line::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+    background-color: var(--middle-red);
+    z-index: -1;
+    
+}
+.section.line:hover::before {
+    width: 100%;
+    
+}
+.section:last-child {
+    background-color: var(--red-wine);
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 9px;
+}
+.section:last-child:hover {
+    background-color: var(--middle-red);
+    transform: scale(1.2);
+
+}
+
+/* SALUDO CONTACTO */
+
+h1 {
+    position: absolute;
+    color: #fff;
+    font: bolder italic 2.6rem var(--monserrat);
+    top: 345px;
+    left: 5rem;
+}
+.small {
+    font-size: 1rem;
+    font-family: var(--quicksand);
+    font-weight: 500;
+    font-style: normal;
+}
+.hello {
+    font: 600 normal 1.2rem var(--quicksand);
+    letter-spacing: 2px;
+    position: absolute;
+    top: 210px;
+    left: 5rem;
+    color: #fff;
+    height: 100px;
+}
+.big::first-letter {
+    font-size: 8rem;
+}
+.big {
+    text-transform: uppercase;
+    font: bolder italic 4.5rem var(--monserrat);
+    letter-spacing: 0.5px;
+    position: absolute;
+    top: 8px;
+    color: var(--lighter-red);
+    left: 0;
+}
+
+.contacto {
+    height: 70px;
+    width: 350px;
+    position: absolute;
+    bottom: 12rem;
+    left: 6rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.empezar, .acerca {
+    background-color: var(--lighter-red);
+    height: 100%;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 600 normal 1.1rem var(--quicksand);
+    border-radius: 5px;
+}
+.acerca {
+    background-color: var(--dark-gray);
+}
+
+/* CUADROS Y FOTO */
+.deco {
+    background-color: var(--lighter-red);
+}
+.square {
+    background: linear-gradient(transparent 0%, var(--lighter-red) );
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    right: 396px;
+    bottom: 85px;
+    z-index: 1;
+    
+}
+.square2 {
+    height: 85px;
+    width: 56px;
+    position: absolute;
+    right: 530px;
+    top: 135px;
+}
+.rectangle {
+    height: 520px;
+    width:250px;
+    position: absolute;
+    right: 3rem;
+    bottom: 7rem;
+}
+.marco {
+    width: 480px;
+    height: 250px;
+    border: 2px solid #fff;
+    position: absolute;
+    right: 60px;
+    top: 150px;
+}
+.marco .nombre {
+    color: #fff;
+    font-family: var(--londrina);
+    font-size: 220px;
+    position: relative;
+    bottom: 187px;
+    right: -7px;
+    font-weight: lighter;
+    text-align: center;
+    letter-spacing: 13px;
+}
+
+.image-container {
+    width: fit-content;
+    position: absolute;
+    right: 7rem;
+    bottom: 9rem;
+    scale: 1.5;
+}
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 70%, var(--dark-gray)); 
+    pointer-events: none; 
+}
