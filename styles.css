@@ -13,12 +13,22 @@
     --londrina: "Londrina Shadow", sans-serif;
     --quicksand: "Quicksand", sans-serif;
     --monserrat: "Montserrat", sans-serif;
+    --rubick-scribble: "Rubik Scribble", system-ui;
 
-
+}
+@font-face {
+    font-family: 'Nordica-Classic-Light-Extended-Outline';
+    src:url('Nordica-Classic-Light-Extended-Outline.ttf.woff') format('woff'),
+        url('Nordica-Classic-Light-Extended-Outline.ttf.svg#Nordica-Classic-Light-Extended-Outline') format('svg'),
+        url('Nordica-Classic-Light-Extended-Outline.ttf.eot'),
+        url('Nordica-Classic-Light-Extended-Outline.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
 }
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;
@@ -45,12 +55,13 @@ header {
 #welcome-section {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
-    background: linear-gradient(var(--dark-gray) 95%, #fff)
+    background: linear-gradient(var(--dark-gray) 95%, var(--silver))
+
 }
 #navbar {
-    margin: auto 14vw auto 0;
+    margin: auto 5vw;
 }
 .section {
     position: relative;
@@ -79,25 +90,22 @@ header {
 .section:last-child {
     background-color: var(--red-wine);
     padding: 10px 20px;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 9px;
+    transition: background-color 0.3s ease;
+    position: relative;
 }
 .section:last-child:hover {
     background-color: var(--middle-red);
-    transform: scale(1.2);
 
 }
 
 /* SALUDO CONTACTO */
 
 h1 {
-    position: relative;
+    position: absolute;
     color: #fff;
     font: bolder italic 2.9rem var(--monserrat);
-    top: 10px;
-    right: 24px;
-   
+    top: 250px;
+    
 }
 .small {
     font-size: 1rem;
@@ -109,17 +117,15 @@ h1 {
     font: 600 normal 1.8rem var(--quicksand);
     letter-spacing: 2px;
     color: #fff;
-    
-}
-   
+    position: absolute;
+    top: 110px;
+    white-space: pre-line;
+}   
 .big {
     text-transform: uppercase;
     font: bolder italic 6rem var(--monserrat);
     letter-spacing: 0.5px;
-    position: relative;
     color: var(--lighter-red);
-    top: 90px;
-    right: 150px;    
 }
 
 .contacto {
@@ -127,8 +133,10 @@ h1 {
     width: 350px;
     color: #fff;
     display: flex;
-    justify-content: space-between;margin-top: 3rem;
-    margin-right: 3rem;
+    justify-content: space-between;
+    position: absolute;
+    top: 390px;
+    left: 40px;
 }
 
 .empezar, .acerca {
@@ -140,24 +148,41 @@ h1 {
     align-items: center;
     font: 600 normal 1.1rem var(--quicksand);
     border-radius: 5px;
+    transition: all 0.4s ease;
 }
+.empezar:hover, .acerca:hover {
+    transform: translateY(-10px);
+}
+
 .acerca {
     background-color: var(--dark-gray);
+    z-index: 3;
 }
 
 .info {
     padding: 0;
     z-index: 1;
-    height: auto;
-    width: auto;
-    position: absolute;
-    top: 140px;
+    height: 650px;
+    width: 100vw;
+    top: 70px;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 4.5vw;
+    justify-content: space-between;
+    min-height: 50vh;
+}
+.saludo {
+    width: 500px;
+    position: relative;
+    margin-left: 5vw;
+}
+.visual {
+    width: 760px;
+    position: relative;
+    margin-right: 8vw;
+
 }
 /* CUADROS Y FOTO */
+
 .deco {
     background-color: var(--lighter-red);
 }
@@ -166,60 +191,104 @@ h1 {
     height: 150px;
     width: 150px;
     position: absolute;
-    right: 396px;
-    bottom: 85px;
-    z-index: 1;
+    top: 450px;
+    left: 140px;
+    z-index: 2;
+}
+@media (max-width: 1500px) {
+    .square {
+        left: 110px;
+    }
+   
+}
+@media (max-width: 1400px) {
+    .square {
+        left: 40px;
+    }
+    #welcome-section {
+        height: 120vh;
+    }
+}
+@media (max-width: 1200px) {
+    .visual {
+        margin-right: 6vw;
+    }
+    #welcome-section {
+        height: 130vh;
+    }
+    .saludo {
+        margin-left: 1vw;
+    }
+    h1 {
+        font-size: 2.7rem;
+    }
+}
+@media (max-width: 1100px) {
+    .square {
+        left: -20px;
+    }
+    #welcome-section {
+        height: 150vh;
+    }
+}
+@media (min-width: 2100px) {
+    .info {
+        justify-content: center;
+    }
+}
+
+@keyframes intermitent {
+    0% {
+        background-color: var(--lighter-red);
+    }
     
+    50% {
+        background-color: var(--red-wine);
+    }
 }
 
 .square2 {
     height: 85px;
     width: 56px;
     position: absolute;
-    right: 530px;
-    top: 135px;
+    top: 100px;
+    right: 610px;
+    animation: intermitent 0.8s infinite 
 }
 .rectangle {
-    height: 520px;
+    height: 550px;
     width:250px;
     position: absolute;
-    right: 3rem;
-    bottom: 7rem;
+    top: 20px;
+    right: 40px;
+    
 }
 .marco {
     width: 480px;
     height: 250px;
-    border: 2px solid #fff;
+    border: 3.4px solid #fff;
     position: absolute;
-    right: 60px;
-    top: 150px;
+    top: 70px;
+    right: 80px;
+    
 }
-.marco .nombre {
+.nombre {
     color: #fff;
-    font-family: var(--londrina);
+    font-family: "Londrina Sketch", sans-serif;
     font-size: 220px;
     position: relative;
-    bottom: 187px;
-    right: -7px;
-    font-weight: lighter;
-    text-align: center;
-    letter-spacing: 13px;
+    top: -182px;    
+    font-weight: 100;
+    letter-spacing: 60px;
+    left: 37px;
 }
 
 .image-container {
-    width: fit-content;
+    width: 600px;
+    height: 600px;   
     position: absolute;
-    right: 7rem;
-    bottom: 9rem;
-    scale: 1.5;
+    right: 60px   ;
+    top: 20px; 
+    background: url(https://static.vecteezy.com/system/resources/thumbnails/026/497/734/small_2x/businessman-on-isolated-png.png) no-repeat 50%  / 95%;
 }
-.image-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 70%, var(--dark-gray)); 
-    pointer-events: none; 
-}
+
